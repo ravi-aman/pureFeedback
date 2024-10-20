@@ -2,6 +2,14 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <h1 className="tex-2cm text-center">RAVIKANT TIWARI</h1>
+    <div>
+      <h1>Home</h1>
+      <Image
+        src="/vercel.svg"
+        alt="Vercel Logo"
+        width={72}
+        height={16}
+      />
+    </div>
   );
 }
