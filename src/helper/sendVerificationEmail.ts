@@ -1,7 +1,6 @@
 import { resend } from "@/lib/resend";
 import VerificationEmail from "../../emails/verificationEmail";
 import { ApiResponce } from "@/types/ApiResponce";
-import { Message } from "@/types/Message"; // Assuming you have a Message type defined
 
 export async function sendVerificationEmail(
     email: string,
@@ -12,12 +11,12 @@ export async function sendVerificationEmail(
         await resend.emails.send({
             from: 'onboarding@resend.dev',
             to: email,
-            subject: "Amango || Verification Code",
+            subject: "MystryMessafe || Verification Code",
             react: VerificationEmail({ username, otp: verifyCode }),
         });
-        return { success: true, message: [{ content: 'Verification Email sent successfully' }] as Message[] }; // Change to return an array of messages
+        return { success: true, message:'verification email' }; // Same here
     } catch (emailError) {
         console.error("Error sending verification email", emailError);
-        return { success: false, message: [{ content: 'Failed to send verification email' }] as Message[] }; // Same here
+        return { success: false, message:'Failed to send verification email' }; // Same here
     }
 }
