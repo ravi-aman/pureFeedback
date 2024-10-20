@@ -15,8 +15,8 @@ export async function sendVerificationEmail(
             from: 'onboarding@resend.dev',
             to: email,
             subject: "Amango || verification code ",
-            react:VerificationEmail({username,otp:verifyCode}),
-          });
+            react: VerificationEmail({ username, otp: verifyCode }),
+        });
         return { success: true, message: 'Verification Email send succesfully' }
     } catch (emailError) {
         console.error("Error sending Verification of email", emailError)
